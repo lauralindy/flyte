@@ -4522,7 +4522,7 @@ grpc (`config.GrpcConfig`_)
 
 .. code-block:: yaml
 
-  enableGrpcHistograms: false
+  enableGrpcLatencyMetrics: false
   maxMessageSizeBytes: 0
   port: 8089
   serverReflection: true
@@ -4723,10 +4723,10 @@ The max size in bytes for incoming gRPC messages
   "0"
   
 
-enableGrpcHistograms (bool)
+enableGrpcLatencyMetrics (bool)
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-Enable grpc histograms
+Enable grpc latency metrics. Note Histograms metrics can be expensive on Prometheus servers.
 
 **Default Value**: 
 

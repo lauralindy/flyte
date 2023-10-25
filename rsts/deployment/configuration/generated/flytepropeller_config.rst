@@ -1111,25 +1111,6 @@ ray (`ray.Config`_)
   ttlSecondsAfterFinished: 3600
   
 
-sagemaker (`config.Config (sagemaker)`_)
-------------------------------------------------------------------------------------------------------------------------
-
-**Default Value**: 
-
-.. code-block:: yaml
-
-  prebuiltAlgorithms:
-  - name: xgboost
-    regionalConfigs:
-    - region: us-east-1
-      versionConfigs:
-      - image: 683313688378.dkr.ecr.us-east-1.amazonaws.com/sagemaker-xgboost:0.90-2-cpu-py3
-        version: "0.90"
-  region: us-east-1
-  roleAnnotationKey: ""
-  roleArn: default_role
-  
-
 snowflake (`snowflake.Config`_)
 ------------------------------------------------------------------------------------------------------------------------
 
@@ -2056,60 +2037,6 @@ destinationClusterConfigs ([]config.DestinationClusterConfig)
 .. code-block:: yaml
 
   []
-  
-
-config.Config (sagemaker)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-roleArn (string)
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-The role the SageMaker plugin uses to communicate with the SageMaker service
-
-**Default Value**: 
-
-.. code-block:: yaml
-
-  default_role
-  
-
-region (string)
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-The AWS region the SageMaker plugin communicates to
-
-**Default Value**: 
-
-.. code-block:: yaml
-
-  us-east-1
-  
-
-roleAnnotationKey (string)
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-Map key to use to lookup role from task annotations.
-
-**Default Value**: 
-
-.. code-block:: yaml
-
-  ""
-  
-
-prebuiltAlgorithms ([]config.PrebuiltAlgorithmConfig)
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-**Default Value**: 
-
-.. code-block:: yaml
-
-  - name: xgboost
-    regionalConfigs:
-    - region: us-east-1
-      versionConfigs:
-      - image: 683313688378.dkr.ecr.us-east-1.amazonaws.com/sagemaker-xgboost:0.90-2-cpu-py3
-        version: "0.90"
   
 
 config.K8sPluginConfig
@@ -5464,6 +5391,16 @@ requests (v1.ResourceList)
 
   cpu: 200m
   memory: 500Mi
+  
+
+claims ([]v1.ResourceClaim)
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+**Default Value**: 
+
+.. code-block:: yaml
+
+  null
   
 
 config.GCPSecretManagerConfig
